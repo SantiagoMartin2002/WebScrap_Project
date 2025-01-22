@@ -153,17 +153,15 @@ def run_streamlit_app_with_best_recommendation():
         st.write("### Top 3 Predictions:")
         for destination, score, emissions in top_3_ensemble_with_emissions_and_emissions:
             st.write(f"**Destination:** {destination}")
-            st.write(f"**F1 Score:** {score:.2f}")
+            st.write(f"**Score:** {score:.2f}")
             st.write(f"**Emissions:** {emissions:.2f} kg CO2")
             st.write("---")
         
         # Get the best destination based on F1 score and emissions balance
         best_destination = recommend_best_destination_with_balance(top_3_ensemble_with_emissions_and_emissions)
 
-        st.write("### Best Recommendation based on F1 Score - Emissions:")
+        st.write("### Best Recommendation based on Score - Emissions:")
         st.write(f"**Best Destination:** {best_destination}")
         
 
 run_streamlit_app_with_best_recommendation()
-
-
